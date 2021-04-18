@@ -1,0 +1,7 @@
+pymc3
+scikit-learn
+jupyterlab
+pytest
+coverage
+pylint
+pytest-cov
