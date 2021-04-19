@@ -24,35 +24,35 @@ class Structure:
         self.scaler = sklearn.preprocessing.StandardScaler(with_mean=False)
 
         configurations = config.Config()
-        self.source = configurations.source()
+        self.instances = configurations.instances()
 
     def points(self):
         """
-        Retrieves the data instances & labels for the modelling exercise; questionable/inappropriate
+        Retrieves the data readings & labels for the modelling exercise; questionable/inappropriate
         attributes are dropped.
 
         :return:
         """
 
         # Design Frame
-        instances = self.data.drop(columns=self.drop).drop(columns=self.source.label)
+        readings = self.data.drop(columns=self.drop).drop(columns=self.instances.label)
         
         # Beware, this is a table
-        labels = self.data[self.source.label]
+        labels = self.data[self.instances.label]
 
-        return instances, labels
+        return readings, labels
 
     @staticmethod
-    def split(instances, labels) -> (pd.DataFrame, pd.DataFrame, pd.Series, pd.Series):
+    def split(readings, labels) -> (pd.DataFrame, pd.DataFrame, pd.Series, pd.Series):
         """
 
-        :param instances:
+        :param readings:
         :param labels:
         :return:
         """
 
         x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(
-            instances, labels, test_size=0.4, random_state=5, stratify=labels)
+            readings, labels, test_size=0.4, random_state=5, stratify=labels)
 
         return x_train, x_test, y_train, y_test
 
@@ -87,8 +87,8 @@ class Structure:
         :return:
         """
 
-        fields_numeric_ = list(set(self.source.numeric).intersection(set(blob.columns)))
-        fields_categorical_ = list(set(blob.columns).difference(set(self.source.numeric)))
+        fields_numeric_ = list(set(self.instances.numeric).intersection(set(blob.columns)))
+        fields_categorical_ = list(set(blob.columns).difference(set(self.instances.numeric)))
 
         scaled_ = self.scaler.fit_transform(X=blob[fields_numeric_].values)
 
@@ -100,8 +100,8 @@ class Structure:
         :return:
         """
 
-        instances, labels = self.points()
-        x_train, x_test, y_train, y_test = self.split(instances, labels)
+        readings, labels = self.points()
+        x_train, x_test, y_train, y_test = self.split(readings, labels)
         x_train, y_train = self.sample(x_train.copy(), y_train.copy())
 
         x_train = self.scale(x_train)
