@@ -17,7 +17,7 @@ class Config:
             typename='InstancesAttributes',
             field_names=['url', 'dtype', 'numeric', 'label'])
 
-        url = 'https://raw.githubusercontent.com/briefings/credit/develop/data/credit.csv'
+        url = 'https://raw.githubusercontent.com/briefings/credit/develop/warehouse/data/modelling.csv'
 
         dtype = {'duration_months': np.int64, 'credit_amount': np.int64, 'i_rate_by_disp_inc': np.int64,
                  'curr_res_since': np.int64, 'age_years': np.int64, 'n_e_credits_this_bank': np.int64,
@@ -54,6 +54,12 @@ class Config:
 
     @staticmethod
     def categories():
+        """
+        For 'dictionary' refer to README
+
+        :return:
+        """
+
         CategoricalData = collections.namedtuple(
             typename='CategoricalData', field_names=['fields', 'arrays', 'dictionary'])
 
@@ -69,19 +75,6 @@ class Config:
                   np.array(['A151', 'A152', 'A153']), np.array(['A171', 'A172', 'A173', 'A174']),
                   np.array(['A191', 'A192']), np.array(['A201', 'A202'])]
 
-        dictionary = {'e_chq_acc_status': {'A11': 0, 'A12': 1, 'A13': 2, 'A14': 3},
-                      'credit_history': {'A30': 0, 'A31': 1, 'A32': 2, 'A33': 3, 'A34': 4},
-                      'purpose': {'A40': 0, 'A41': 1, 'A42': 2, 'A43': 3, 'A44': 4, 'A45': 5, 'A46': 6, 'A47': 7,
-                                  'A48': 8, 'A49': 9, 'A410': 10},
-                      'savings_acc_class': {'A61': 0, 'A62': 1, 'A63': 2, 'A64': 3, 'A65': 4},
-                      'curr_emp_class': {'A71': 0, 'A72': 1, 'A73': 2, 'A74': 3, 'A75': 4},
-                      'sex_and_status': {'A91': 0, 'A92': 1, 'A93': 2, 'A94': 3, 'A95': 4},
-                      'other_debtors_class': {'A101': 0, 'A102': 1, 'A103': 2},
-                      'property': {'A121': 0, 'A122': 1, 'A123': 2, 'A124': 3},
-                      'other_i_plans': {'A141': 0, 'A142': 1, 'A143': 2},
-                      'housing': {'A151': 0, 'A152': 1, 'A153': 2},
-                      'job': {'A171': 0, 'A172': 1, 'A173': 2, 'A174': 3},
-                      'telephone': {'A191': 0, 'A192': 1},
-                      'foreign_worker': {'A201': 1, 'A202': 0}}
+        dictionary = {}
 
         return CategoricalData._make((fields, arrays, dictionary))
