@@ -10,6 +10,9 @@
 # logs
 rm -rf *.log
 
+# config
+rm -rf config.py
+
 # ArViz & PyMC3
 pip install yellowbrick &> yellow.log
 pip install pymc3==3.11.2 &> pymc3.log
