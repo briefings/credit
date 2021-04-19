@@ -9,13 +9,13 @@ class Read:
 
         configurations = config.Config()
 
-        self.source = configurations.source()
+        self.instances = configurations.instances()
 
     def read_(self):
 
         try:
-            data = pd.read_csv(filepath_or_buffer=self.source.url, header=0,
-                               encoding='utf-8', dtype=self.source.dtype)
+            data = pd.read_csv(filepath_or_buffer=self.instances.url, header=0,
+                               encoding='utf-8', dtype=self.instances.dtype)
         except OSError as err:
             raise Exception(err.strerror) in err
 
