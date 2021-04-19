@@ -16,6 +16,7 @@ pip install pymc3==3.11.2 &> pymc3.log
 
 # https://linux.die.net/man/1/wget
 wget -q https://github.com/briefings/credit/raw/develop/credit.zip
+wget -q https://raw.githubusercontent.com/briefings/credit/develop/config.py
 
 # https://linux.die.net/man/1/unzip
 rm -rf credit
