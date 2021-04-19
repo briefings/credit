@@ -15,7 +15,7 @@ pip install yellowbrick &> yellow.log
 pip install pymc3==3.11.2 &> pymc3.log
 
 # https://linux.die.net/man/1/wget
-wget -q https://github.com/plausibilities/sars/raw/develop/sars.zip
+wget -q https://github.com/briefings/credit/raw/develop/credit.zip
 
 # https://linux.die.net/man/1/unzip
 rm -rf credit
