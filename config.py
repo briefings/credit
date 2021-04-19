@@ -11,9 +11,10 @@ class Config:
         self.root = os.path.abspath(__package__)
 
     @staticmethod
-    def source():
-        SourceAttributes = collections.namedtuple(
-            typename='SourceAttributes',
+    def instances():
+
+        InstancesAttributes = collections.namedtuple(
+            typename='InstancesAttributes',
             field_names=['url', 'dtype', 'numeric', 'label'])
 
         url = 'https://raw.githubusercontent.com/briefings/credit/develop/data/credit.csv'
@@ -38,7 +39,7 @@ class Config:
 
         label = ['healthy']
 
-        return SourceAttributes._make((url, dtype, numeric, label))
+        return InstancesAttributes._make((url, dtype, numeric, label))
 
     @staticmethod
     def constraints():
