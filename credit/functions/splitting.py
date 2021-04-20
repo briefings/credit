@@ -31,7 +31,7 @@ class Splitting:
         self.scaler = sklearn.preprocessing.StandardScaler(with_mean=False)
 
         configurations = config.Config()
-        self.instances = configurations.instances()
+        self.modelling = configurations.modelling()
 
     def points(self):
         """
@@ -42,10 +42,10 @@ class Splitting:
         """
 
         # Design Frame
-        readings = self.data.drop(columns=self.drop).drop(columns=self.instances.label)
+        readings = self.data.drop(columns=self.drop).drop(columns=self.modelling.label)
         
         # Beware, this is a table
-        labels = self.data[self.instances.label]
+        labels = self.data[self.modelling.label]
 
         return readings, labels
 
@@ -95,8 +95,8 @@ class Splitting:
         :return:
         """
 
-        fields_numeric_ = list(set(self.instances.numeric).intersection(set(blob.columns)))
-        fields_categorical_ = list(set(blob.columns).difference(set(self.instances.numeric)))
+        fields_numeric_ = list(set(self.modelling.numeric).intersection(set(blob.columns)))
+        fields_categorical_ = list(set(blob.columns).difference(set(self.modelling.numeric)))
 
         scaled_ = self.scaler.fit_transform(X=blob[fields_numeric_].values)
 
