@@ -3,7 +3,7 @@ import pandas as pd
 import config
 
 
-class Read:
+class Baseline:
 
     def __init__(self):
 
