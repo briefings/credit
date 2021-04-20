@@ -38,20 +38,14 @@ class Modelling:
 
         return InstancesAttributes._make((url, dtype, labels))
 
-    def read(self):
+    def data(self):
 
         attributes = self.attributes()
 
         try:
-            data = pd.read_csv(filepath_or_buffer=attributes.url, header=0,
+            data_ = pd.read_csv(filepath_or_buffer=attributes.url, header=0,
                                encoding='utf-8', dtype=attributes.dtype)
         except OSError as err:
             raise Exception(err.strerror) in err
 
-        return data
-
-    def exc(self):
-
-        data = self.read()
-
-        return data
+        return data_
