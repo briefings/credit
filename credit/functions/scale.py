@@ -13,9 +13,8 @@ class Scale:
         """
 
         self.scaler = sklearn.preprocessing.StandardScaler(with_mean=False)
-
-        configurations = config.Config()
-        self.modelling = configurations.modelling()
+        
+        self.numeric = config.Config().numeric
 
     def exc(self, blob: pd.DataFrame) -> np.ndarray:
         """
@@ -25,10 +24,10 @@ class Scale:
         """
 
         # The numeric fields
-        fields_numeric_ = list(set(self.modelling.numeric).intersection(set(blob.columns)))
+        fields_numeric_ = list(set(self.numeric).intersection(set(blob.columns)))
 
         # The categorical fields
-        fields_categorical_ = list(set(blob.columns).difference(set(self.modelling.numeric)))
+        fields_categorical_ = list(set(blob.columns).difference(set(self.numeric)))
 
         # Scaling the numeric fields only
         scaled_ = self.scaler.fit_transform(X=blob[fields_numeric_].values)
