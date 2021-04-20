@@ -8,7 +8,7 @@ import sklearn.preprocessing
 import config
 
 
-class Structure:
+class Splitting:
     """
     Class Structure
 
