@@ -17,8 +17,6 @@ class Config:
         self.numeric = ['duration_months', 'credit_amount', 'i_rate_by_disp_inc', 'curr_res_since', 'age_years',
                         'n_e_credits_this_bank', 'n_dependants']
 
-        self.labels = ['healthy']
-
     @staticmethod
     def modelling():
         """
@@ -26,7 +24,8 @@ class Config:
         :return:
         """
 
-        InstancesAttributes = collections.namedtuple(typename='InstancesAttributes', field_names=['url', 'dtype'])
+        InstancesAttributes = collections.namedtuple(
+            typename='InstancesAttributes', field_names=['url', 'dtype', 'labels'])
 
         url = 'https://raw.githubusercontent.com/briefings/credit/develop/warehouse/data/modelling.csv'
 
@@ -45,7 +44,9 @@ class Config:
                  'A201': np.uint8, 'A91': np.uint8, 'A92': np.uint8, 'A93': np.uint8, 'A94': np.uint8,
                  'sex': np.int64, 'healthy': np.int64}
 
-        return InstancesAttributes._make((url, dtype))
+        labels = ['healthy']
+
+        return InstancesAttributes._make((url, dtype, labels))
 
     @staticmethod
     def credit():
