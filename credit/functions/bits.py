@@ -1,6 +1,6 @@
 import pandas as pd
 
-import credit.src.credit
+import credit.src.archetype
 
 
 class Bits:
@@ -20,7 +20,7 @@ class Bits:
             }
         """
 
-        cr = credit.src.credit.Credit()
+        cr = credit.src.archetype.Credit()
         self.categories = cr.categories()
 
     @staticmethod
