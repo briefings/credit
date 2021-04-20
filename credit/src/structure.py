@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 
+import collections
+
 import sklearn.preprocessing
 
 import config
@@ -9,17 +11,22 @@ import config
 class Structure:
     """
     Class Structure
+
+    Scaling is conducted **after splitting** in order to **avoid data leakage**;
+    [more](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.scale.html)
     """
 
-    def __init__(self, data: pd.DataFrame, drop: list):
+    def __init__(self, data: pd.DataFrame, drop: list, sampling: collections.namedtuple):
         """
 
         :param data: The data set in focus
         :param drop: The attributes, fields, that will be excluded from the model
+        :param sampling:
         """
 
         self.data = data
         self.drop = drop
+        self.sampling = sampling
 
         self.scaler = sklearn.preprocessing.StandardScaler(with_mean=False)
 
@@ -56,8 +63,7 @@ class Structure:
 
         return x_train, x_test, y_train, y_test
 
-    @staticmethod
-    def sample(x_train, y_train) -> (pd.DataFrame, pd.Series):
+    def sample(self, x_train, y_train) -> (pd.DataFrame, pd.Series):
         """
 
         :param x_train:
@@ -71,8 +77,10 @@ class Structure:
         positive = indices[true == 1]
         negative = indices[true != 1]
 
-        j = sklearn.utils.resample(negative, replace=True, n_samples=1000, random_state=5)
-        k = sklearn.utils.resample(positive, replace=True, n_samples=1000, random_state=5)
+        j = sklearn.utils.resample(
+            negative, replace=True, n_samples=self.sampling.n_samples, random_state=self.sampling.random_state)
+        k = sklearn.utils.resample(
+            positive, replace=True, n_samples=self.sampling.n_samples, random_state=self.sampling.random_state)
         i = sklearn.utils.shuffle(np.concatenate((j, k)))
 
         x_train = x_train.iloc[i, :]
