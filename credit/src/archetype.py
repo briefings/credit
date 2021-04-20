@@ -3,7 +3,7 @@ import collections
 
 
 # noinspection PyUnresolvedReferences,PyProtectedMember
-class Credit:
+class Archetype:
 
     def __init__(self):
         """
