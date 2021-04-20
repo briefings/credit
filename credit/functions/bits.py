@@ -20,8 +20,8 @@ class Bits:
             }
         """
 
-        cr = credit.src.archetype.Credit()
-        self.categories = cr.categories()
+        archetype = credit.src.archetype.Archetype()
+        self.categories = archetype.categories()
 
     @staticmethod
     def encode(points: pd.Series, variates: dict):
