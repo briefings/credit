@@ -1,5 +1,7 @@
 pymc3
 scikit-learn
+matplotlib
+seaborn
 jupyterlab
 pytest
 coverage
