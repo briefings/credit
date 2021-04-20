@@ -8,14 +8,25 @@ import numpy as np
 class Config:
 
     def __init__(self):
+        """
+
+        """
+
         self.root = os.path.abspath(__package__)
 
-    @staticmethod
-    def instances():
+        self.numeric = ['duration_months', 'credit_amount', 'i_rate_by_disp_inc', 'curr_res_since', 'age_years',
+                        'n_e_credits_this_bank', 'n_dependants']
 
-        InstancesAttributes = collections.namedtuple(
-            typename='InstancesAttributes',
-            field_names=['url', 'dtype', 'numeric', 'label'])
+        self.label = ['healthy']
+
+    @staticmethod
+    def modelling():
+        """
+
+        :return:
+        """
+
+        InstancesAttributes = collections.namedtuple(typename='InstancesAttributes', field_names=['url', 'dtype'])
 
         url = 'https://raw.githubusercontent.com/briefings/credit/develop/warehouse/data/modelling.csv'
 
@@ -34,27 +45,13 @@ class Config:
                  'A201': np.uint8, 'A91': np.uint8, 'A92': np.uint8, 'A93': np.uint8, 'A94': np.uint8,
                  'sex': np.int64, 'healthy': np.int64}
 
-        numeric = ['duration_months', 'credit_amount', 'i_rate_by_disp_inc', 'curr_res_since', 'age_years',
-                   'n_e_credits_this_bank', 'n_dependants']
-
-        label = ['healthy']
-
-        return InstancesAttributes._make((url, dtype, numeric, label))
+        return InstancesAttributes._make((url, dtype))
 
     @staticmethod
-    def constraints():
-        FieldConstraints = collections.namedtuple(typename='FieldConstraints',
-                                                  field_names=['minimal', 'additional', 'selections'])
-
-        return FieldConstraints._make(
-            (['sex', 'A91', 'A92', 'A93', 'A94', 'age_years'],
-             ['A61', 'A62', 'A63', 'A64', 'A65', 'A71', 'A72', 'A73', 'A74', 'A75',
-              'curr_res_since', 'n_e_credits_this_bank', 'A171', 'A172', 'A173', 'A174'],
-             ['curr_res_since', 'A171', 'A172', 'A173', 'A174']))
-
-    @staticmethod
-    def categories():
+    def credit():
         """
+        http://archive.ics.uci.edu/ml/datasets/Statlog+%28German+Credit+Data%29
+
         For 'dictionary' refer to README
 
         :return:
