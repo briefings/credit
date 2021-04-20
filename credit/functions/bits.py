@@ -1,6 +1,6 @@
 import pandas as pd
 
-import config
+import credit.src.credit
 
 
 class Bits:
@@ -20,8 +20,8 @@ class Bits:
             }
         """
 
-        configurations = config.Config()
-        self.categories = configurations.categories()
+        cr = credit.src.credit.Credit()
+        self.categories = cr.categories()
 
     @staticmethod
     def encode(points: pd.Series, variates: dict):
