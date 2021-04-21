@@ -5,7 +5,7 @@ import sklearn.preprocessing
 import config
 
 
-class Scale:
+class Scales:
 
     def __init__(self):
         """
