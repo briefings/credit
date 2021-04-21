@@ -12,24 +12,25 @@ class Scale:
 
         """
 
-        self.scaler = sklearn.preprocessing.StandardScaler(with_mean=False)
-        
         self.numeric = config.Config().numeric
 
-    def exc(self, blob: pd.DataFrame) -> np.ndarray:
+    def exc(self, blob: pd.DataFrame) -> (np.ndarray, sklearn.preprocessing.StandardScaler):
         """
 
         :param blob:
         :return:
         """
 
-        # The numeric fields
-        fields_numeric_ = list(set(self.numeric).intersection(set(blob.columns)))
-
-        # The categorical fields
-        fields_categorical_ = list(set(blob.columns).difference(set(self.numeric)))
+        # The numeric & categorical fields
+        numerical = list(set(self.numeric).intersection(set(blob.columns)))
+        categorical = list(set(blob.columns).difference(set(self.numeric)))
 
         # Scaling the numeric fields only
-        scaled_ = self.scaler.fit_transform(X=blob[fields_numeric_].values)
+        scaler = sklearn.preprocessing.StandardScaler(with_mean=False)
+        scaler.fit(X=blob[numerical].values)
+        scaled_ = scaler.transform(X=blob[numerical].values)
 
-        return np.concatenate((scaled_, blob[fields_categorical_].values), axis=1)
+        # Altogether
+        data = np.concatenate((scaled_, blob[categorical].values), axis=1)
+
+        return data, scaler
