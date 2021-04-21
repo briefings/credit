@@ -1,6 +1,6 @@
 import pandas as pd
 
-import config
+import credit.src.archetype
 
 
 class Bits:
@@ -20,8 +20,8 @@ class Bits:
             }
         """
 
-        configurations = config.Config()
-        self.categories = configurations.categories()
+        archetype = credit.src.archetype.Archetype()
+        self.categories = archetype.categories()
 
     @staticmethod
     def encode(points: pd.Series, variates: dict):

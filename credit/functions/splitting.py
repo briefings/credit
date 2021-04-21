@@ -16,7 +16,7 @@ class Splitting:
     [more](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.scale.html)
     """
 
-    def __init__(self, data: pd.DataFrame, drop: list, sampling: collections.namedtuple):
+    def __init__(self, data: pd.DataFrame, drop: list, labels: list, sampling: collections.namedtuple):
         """
 
         :param data: The data set in focus
@@ -26,12 +26,13 @@ class Splitting:
 
         self.data = data
         self.drop = drop
+        self.labels = labels
         self.sampling = sampling
 
         self.scaler = sklearn.preprocessing.StandardScaler(with_mean=False)
 
         configurations = config.Config()
-        self.instances = configurations.instances()
+        self.numeric = configurations.numeric
 
     def points(self):
         """
@@ -42,10 +43,10 @@ class Splitting:
         """
 
         # Design Frame
-        readings = self.data.drop(columns=self.drop).drop(columns=self.instances.label)
+        readings = self.data.drop(columns=self.drop).drop(columns=self.labels)
         
         # Beware, this is a table
-        labels = self.data[self.instances.label]
+        labels = self.data[self.labels]
 
         return readings, labels
 
@@ -95,8 +96,8 @@ class Splitting:
         :return:
         """
 
-        fields_numeric_ = list(set(self.instances.numeric).intersection(set(blob.columns)))
-        fields_categorical_ = list(set(blob.columns).difference(set(self.instances.numeric)))
+        fields_numeric_ = list(set(self.numeric).intersection(set(blob.columns)))
+        fields_categorical_ = list(set(blob.columns).difference(set(self.numeric)))
 
         scaled_ = self.scaler.fit_transform(X=blob[fields_numeric_].values)
 
