@@ -15,7 +15,7 @@ class Split:
 
         self.splitting = splitting
 
-    def split(self, data, labels) -> (pd.DataFrame, pd.DataFrame, pd.Series, pd.Series):
+    def exc(self, data, labels) -> (pd.DataFrame, pd.DataFrame, pd.Series, pd.Series):
         """
 
         :param data:

@@ -7,29 +7,44 @@ import config
 
 class Scale:
 
-    def __init__(self):
+    def __init__(self, blob: pd.DataFrame):
         """
 
         """
 
-        self.scaler = sklearn.preprocessing.StandardScaler(with_mean=False)
-        
+        self.blob = blob
+
+        # From config.py
         self.numeric = config.Config().numeric
 
-    def exc(self, blob: pd.DataFrame) -> np.ndarray:
+        # The numeric & categorical fields
+        self.numerical = list(set(self.numeric).intersection(set(blob.columns)))
+        self.categorical = list(set(blob.columns).difference(set(self.numeric)))
+
+    def pieces(self, scaler) -> np.ndarray:
         """
 
-        :param blob:
+        :param scaler:
         :return:
         """
 
-        # The numeric fields
-        fields_numeric_ = list(set(self.numeric).intersection(set(blob.columns)))
+        # Scale
+        scaled_ = scaler.transform(X=self.blob[self.numerical].values)
 
-        # The categorical fields
-        fields_categorical_ = list(set(blob.columns).difference(set(self.numeric)))
+        # Altogether
+        return np.concatenate((scaled_, self.blob[self.categorical].values), axis=1)
+
+    def exc(self) -> (np.ndarray, sklearn.preprocessing.StandardScaler):
+        """
+
+        :return:
+        """
 
         # Scaling the numeric fields only
-        scaled_ = self.scaler.fit_transform(X=blob[fields_numeric_].values)
+        scaler = sklearn.preprocessing.StandardScaler(with_mean=False)
+        scaler.fit(X=self.blob[self.numerical].values)
 
-        return np.concatenate((scaled_, blob[fields_categorical_].values), axis=1)
+        # Use scaler to scale the numerical data, subsequently reconstruct the data
+        data = self.pieces(scaler=scaler)
+
+        return data, scaler
