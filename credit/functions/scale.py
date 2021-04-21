@@ -21,7 +21,7 @@ class Scale:
         self.numerical = list(set(self.numeric).intersection(set(blob.columns)))
         self.categorical = list(set(blob.columns).difference(set(self.numeric)))
 
-    def pieces(self, scaler) -> np.ndarray:
+    def assemble(self, scaler) -> np.ndarray:
         """
 
         :param scaler:
@@ -45,6 +45,6 @@ class Scale:
         scaler.fit(X=self.blob[self.numerical].values)
 
         # Use scaler to scale the numerical data, subsequently reconstruct the data
-        data = self.pieces(scaler=scaler)
+        data = self.assemble(scaler=scaler)
 
         return data, scaler
