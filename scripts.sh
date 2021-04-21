@@ -14,7 +14,7 @@ rm -rf *.log
 rm -rf config.py
 
 # ArViz & PyMC3
-pip install yellowbrick &> yellow.log
+pip install yellowbrick==1.3.post1 &> yellow.log
 pip install pymc3==3.11.2 &> pymc3.log
 
 # https://linux.die.net/man/1/wget
