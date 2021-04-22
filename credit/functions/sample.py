@@ -3,7 +3,6 @@ import sklearn.utils
 import collections
 
 import numpy as np
-import pandas as pd
 
 
 class Sample:
@@ -17,16 +16,16 @@ class Sample:
 
         self.sampling = sampling
 
-    def sample(self, indices: np.ndarray, true: np.ndarray) -> np.ndarray:
+    def sample(self, indices: np.ndarray, labels: np.ndarray) -> np.ndarray:
         """
 
         :param indices:
-        :param true:
+        :param labels:
         :return:
         """
 
-        negative = indices[true != 1]
-        positive = indices[true == 1]
+        negative = indices[labels != 1]
+        positive = indices[labels == 1]
 
         j = sklearn.utils.resample(
             negative, replace=True, n_samples=self.sampling.n_samples, random_state=self.sampling.random_state)
@@ -35,20 +34,16 @@ class Sample:
 
         return sklearn.utils.shuffle(np.concatenate((j, k)))
 
-    def exc(self, x_train: pd.DataFrame, y_train: pd.Series) -> (pd.DataFrame, pd.Series):
+    def exc(self, features: np.ndarray, labels: np.ndarray) -> (np.ndarray, np.ndarray):
         """
 
-        :param x_train:
-        :param y_train:
+        :param features:
+        :param labels:
         :return:
         """
 
-        indices = np.arange(y_train.shape[0])
-        true = y_train.values.flatten()
+        indices = np.arange(labels.shape[0])
 
-        index = self.sample(indices=indices, true=true)
+        index = self.sample(indices=indices, labels=labels)
 
-        x_train = x_train.iloc[index, :]
-        y_train = y_train.iloc[index]
-
-        return x_train, y_train
+        return features[index, :], labels[index]
