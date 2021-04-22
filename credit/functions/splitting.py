@@ -16,7 +16,7 @@ class Splitting:
     [more](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.scale.html)
     """
 
-    def __init__(self, data: pd.DataFrame, drop: list, labels: list, sampling: collections.namedtuple):
+    def __init__(self, data: pd.DataFrame, drop: list, labels: str, sampling: collections.namedtuple):
         """
 
         :param data: The data set in focus

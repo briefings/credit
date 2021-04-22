@@ -23,7 +23,7 @@ class Archetype:
 
         url = 'https://raw.githubusercontent.com/briefings/credit/develop/data/credit.csv'
 
-        labels = ['label']
+        labels = 'label'
 
         return InstancesAttributes._make((url, labels))
 
