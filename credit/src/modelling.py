@@ -34,7 +34,7 @@ class Modelling:
                  'A201': np.uint8, 'A91': np.uint8, 'A92': np.uint8, 'A93': np.uint8, 'A94': np.uint8,
                  'sex': np.int64, 'healthy': np.int64}
 
-        labels = ['reasonable']
+        labels = 'reasonable'
 
         return InstancesAttributes._make((url, dtype, labels))
 
