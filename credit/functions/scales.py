@@ -37,13 +37,12 @@ class Scales:
 
         # Scaling numerical fields
         scaled_: np.ndarray = scaler.transform(X=blob[numerical])
-        scaled: pd.DataFrame = pd.DataFrame(data=scaled_)
-        scaled.columns = numerical
-        print(scaled.head())
-        print(blob[categorical].head())
+        unscaled = blob[categorical]
 
         # Altogether
-        return pd.concat([scaled, blob[categorical]], axis=1)
+        frame = pd.DataFrame(np.concatenate((scaled_, unscaled), axis=1), columns=(numerical + categorical))
+        
+        return frame
 
     def determine(self, blob: pd.DataFrame) -> sklearn.preprocessing.StandardScaler:
         """
