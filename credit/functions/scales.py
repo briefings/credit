@@ -36,7 +36,10 @@ class Scales:
         numerical, categorical = self.fields(blob=blob.copy())
 
         # Scaling numerical fields
+        print(numerical)
+        print(blob[numerical].shape)
         scaled_: np.ndarray = scaler.transform(X=blob[numerical])
+        print(scaled_.shape)
         scaled = pd.DataFrame(data=scaled_, columns=numerical)
 
         # Altogether
