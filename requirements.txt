@@ -9,5 +9,6 @@ pylint==2.6.0
 pytest-cov==2.10.1
 ## The following requirements were added by pip freeze:
 arviz==0.6.1
+graphviz==2.38
 numpy==1.19.1
 pandas==1.1.3
