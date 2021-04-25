@@ -38,4 +38,4 @@ class DAG:
         diagram.save(os.path.join(self.warehouse, 'model.gv'))
         graphviz.render(engine='dot', format='pdf', filepath=os.path.join(self.warehouse, 'model.gv'))
 
-        graphviz.Source.from_file(filename=os.path.join(self.warehouse, 'model.gv'))
+        return graphviz.Source.from_file(filename=os.path.join(self.warehouse, 'model.gv'))
