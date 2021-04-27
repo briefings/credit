@@ -23,7 +23,7 @@ class Scales:
 
         return numerical, categorical
 
-    def apply(self, blob: pd.DataFrame, scaler: sklearn.preprocessing.StandardScaler) -> np.ndarray:
+    def apply(self, blob: pd.DataFrame, scaler: sklearn.preprocessing.StandardScaler) -> pd.DataFrame:
         """
         Use scaler to scale the numerical data, subsequently reconstruct the data
 
@@ -34,12 +34,17 @@ class Scales:
 
         # Fields
         numerical, categorical = self.fields(blob=blob.copy())
+        print(numerical)
+        print(categorical)
 
         # Scaling numerical fields
-        scaled_ = scaler.transform(X=blob[numerical].values)
+        scaled_: np.ndarray = scaler.transform(X=blob[numerical])
+        unscaled = blob[categorical]
 
         # Altogether
-        return np.concatenate((scaled_, blob[categorical].values), axis=1)
+        frame = pd.DataFrame(np.concatenate((scaled_, unscaled), axis=1), columns=(numerical + categorical))
+
+        return frame
 
     def determine(self, blob: pd.DataFrame) -> sklearn.preprocessing.StandardScaler:
         """
