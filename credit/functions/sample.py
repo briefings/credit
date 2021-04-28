@@ -29,6 +29,7 @@ class Sample:
         """
 
         indices = sklearn.utils.shuffle(vector)
+        indices = sklearn.utils.shuffle(indices)
 
         rebuilt = self.frame.iloc[indices, :]
         rebuilt.reset_index(drop=True, inplace=True)
