@@ -42,7 +42,11 @@ class Scales:
         unscaled = blob[categorical]
 
         # Altogether
-        frame = pd.DataFrame(np.concatenate((scaled_, unscaled), axis=1), columns=(numerical + categorical))
+        numeric = pd.DataFrame(data=scaled_, columns=numerical)
+        bits = pd.DataFrame(data=unscaled, columns=categorical)
+        pd.concat((numeric, bits), axis=1, ignore_index=False)
+
+        frame = 
 
         return frame
 
