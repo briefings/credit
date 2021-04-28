@@ -15,18 +15,24 @@ class Split:
 
         self.splitting = splitting
 
-    def exc(self, data: pd.DataFrame, labels: pd.Series) -> (pd.DataFrame, pd.DataFrame, pd.Series, pd.Series):
+    def exc(self, data: pd.DataFrame, labels: str, strata: list) -> \
+            (pd.DataFrame, pd.DataFrame, pd.Series, pd.Series):
         """
 
         :param data:
         :param labels:
+        :param strata:
         :return:
         """
 
+        if len(labels) == 1:
+            labels = labels[0]
+
         x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(
-            data, labels,
+            data.drop(columns=labels),
+            data[labels],
             test_size=self.splitting.test_size,
             random_state=self.splitting.random_state,
-            stratify=labels)
+            stratify=data[strata])
 
         return x_train, x_test, y_train, y_test

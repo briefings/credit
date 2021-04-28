@@ -5,7 +5,7 @@ import sklearn.preprocessing
 import config
 
 
-class Scales:
+class Scalers:
 
     def __init__(self):
         """
@@ -34,15 +34,15 @@ class Scales:
 
         # Fields
         numerical, categorical = self.fields(blob=blob.copy())
-        print(numerical)
-        print(categorical)
 
         # Scaling numerical fields
         scaled_: np.ndarray = scaler.transform(X=blob[numerical])
         unscaled = blob[categorical]
 
         # Altogether
-        frame = pd.DataFrame(np.concatenate((scaled_, unscaled), axis=1), columns=(numerical + categorical))
+        numeric = pd.DataFrame(data=scaled_, columns=numerical)
+        bits = pd.DataFrame(data=unscaled, columns=categorical)
+        frame = pd.concat((numeric, bits), axis=1, ignore_index=False)
 
         return frame
 
