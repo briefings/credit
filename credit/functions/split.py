@@ -15,11 +15,13 @@ class Split:
 
         self.splitting = splitting
 
-    def exc(self, data: pd.DataFrame, labels: pd.Series) -> (pd.DataFrame, pd.DataFrame, pd.Series, pd.Series):
+    def exc(self, data: pd.DataFrame, labels: pd.Series, stratify: pd.DataFrame) -> \
+            (pd.DataFrame, pd.DataFrame, pd.Series, pd.Series):
         """
 
         :param data:
         :param labels:
+        :param stratify
         :return:
         """
 
@@ -27,6 +29,6 @@ class Split:
             data, labels,
             test_size=self.splitting.test_size,
             random_state=self.splitting.random_state,
-            stratify=labels)
+            stratify=stratify)
 
         return x_train, x_test, y_train, y_test
