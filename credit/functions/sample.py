@@ -1,49 +1,60 @@
-import sklearn.utils
-
 import collections
 
 import numpy as np
+import pandas as pd
+import sklearn.utils
 
 
 class Sample:
 
-    def __init__(self, sampling: collections.namedtuple):
+    def __init__(self, frame: pd.DataFrame, strata: list, sampling: collections.namedtuple):
         """
 
-        :param sampling: A collection of named parameters, and their values, for
-                         the sklearn.utils.resample() function
+        :param frame:
+        :param strata: The field/s of frame that will guide the sampling
+        :param sampling: Wherein
+                            sampling.n_samples: the number of instances per distinct strata values combination
+                            sampling.random_state: ...
         """
 
+        self.frame = frame
+        self.strata = strata
         self.sampling = sampling
 
-    def sample(self, indices: np.ndarray, labels: np.ndarray) -> np.ndarray:
+    def sample(self, vector: np.ndarray) -> pd.DataFrame:
         """
 
-        :param indices:
-        :param labels:
+        :param vector:
         :return:
         """
 
-        negative = indices[labels != 1]
-        positive = indices[labels == 1]
+        indices = sklearn.utils.shuffle(vector)
 
-        j = sklearn.utils.resample(
-            negative, replace=True, n_samples=self.sampling.n_samples, random_state=self.sampling.random_state)
-        k = sklearn.utils.resample(
-            positive, replace=True, n_samples=self.sampling.n_samples, random_state=self.sampling.random_state)
+        rebuilt = self.frame.iloc[indices, :]
+        rebuilt.reset_index(drop=True, inplace=True)
 
-        return sklearn.utils.shuffle(np.concatenate((j, k)))
+        return rebuilt
 
-    def exc(self, features: np.ndarray, labels: np.ndarray) -> (np.ndarray, np.ndarray):
+    def exc(self) -> pd.DataFrame:
         """
 
-        :param features:
-        :param labels:
         :return:
         """
 
-        indices = np.arange(labels.shape[0])
+        permutations = self.frame[self.strata].to_numpy()
+        combinations = np.unique(permutations, axis=0)
 
-        index = self.sample(indices=indices, labels=labels)
+        vector = np.array([])
+        for combination in combinations:
+            states = (permutations == combination)
+            conditions = np.all(states, axis=1)
 
-        return features[index, :], labels[index]
+            indices = self.frame[conditions].index
+            array_ = indices.to_numpy()
+
+            select = sklearn.utils.resample(
+                array_, replace=True, n_samples=self.sampling.n_samples, random_state=self.sampling.random_state)
+
+            vector = np.concatenate((vector, select))
+
+        return self.sample(vector=vector)
