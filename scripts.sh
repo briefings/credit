@@ -8,16 +8,16 @@
 # apt-get install dvipng &>> tex.log
 
 
-# logs
-rm -rf *.log
-
-
-# config
+# Setting-up
+rm -rf log
 rm -rf config.py
+rm -rf warehouse
+
+mkdir logs
+mkdir warehouse
 
 
 # Packages
-mkdir logs
 pip install yellowbrick==1.3.post1 &> logs/yellow.log
 pip install pymc3==3.11.2 &> logs/pymc3.log
 pip install cloudpickle==1.6.0 &> logs/cloudpickle.log
