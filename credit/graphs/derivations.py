@@ -37,7 +37,7 @@ class Derivations:
 
         data = self.derivations.set_index(keys='threshold')
 
-        return data[['precision', 'sensitivity', 'specificity', 'fscore', 'youden', 'matthew']]
+        return data[['precision', 'sensitivity', 'specificity', 'fscore', 'youden', 'matthews']]
 
     def exc(self):
         """
