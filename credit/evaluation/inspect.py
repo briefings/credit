@@ -44,7 +44,7 @@ class Inspect:
 
     def exc(self):
         """
-        
+
         :return:
         """
 
