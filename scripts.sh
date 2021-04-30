@@ -11,10 +11,7 @@
 # Setting-up
 rm -rf log
 rm -rf config.py
-rm -rf warehouse
-
 mkdir logs
-mkdir warehouse
 
 
 # Packages
@@ -26,19 +23,10 @@ pip install dask[complete]==2.30.0 &> logs/dask.log
 
 # https://linux.die.net/man/1/wget
 wget -q https://github.com/briefings/credit/raw/develop/credit.zip
-wget -q https://github.com/briefings/credit/raw/develop/warehouse/trace.zip
 wget -q https://raw.githubusercontent.com/briefings/credit/develop/config.py
-
-wget -q -P warehouse https://github.com/briefings/credit/raw/develop/warehouse/baseline.pkl
-wget -q -P warehouse https://github.com/briefings/credit/raw/develop/warehouse/model.pkl
-wget -q -P warehouse https://raw.githubusercontent.com/briefings/credit/develop/data/testing.csv
 
 
 # https://linux.die.net/man/1/unzip
 rm -rf credit
 unzip -u -q credit.zip
 rm -rf credit.zip
-
-rm -rf trace
-unzip -u -q trace.zip
-rm -r trace.zip
