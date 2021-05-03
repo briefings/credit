@@ -1,6 +1,6 @@
 <br>
 
-This is focused on Professor Dr. Hans Hofmann's [German Credit Data](https://archive.ics.uci.edu/ml/datasets/Statlog+%28German+Credit+Data%29)
+This repository is focused on Professor Dr. Hans Hofmann's [German Credit Data](https://archive.ics.uci.edu/ml/datasets/Statlog+%28German+Credit+Data%29)
 
 <br>
 
