@@ -6,7 +6,7 @@ This repository is focused on Professor Dr. Hans Hofmann's [German Credit Data](
 
 DAG:
 
-* data.ipynb →
+* [data.ipynb](https://colab.research.google.com/github/exhypotheses/credit/blob/develop/notebooks/data.ipynb) →
 
 <br>
 
