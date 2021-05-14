@@ -4,6 +4,12 @@ This repository is focused on Professor Dr. Hans Hofmann's [German Credit Data](
 
 <br>
 
+DAG:
+
+* [data.ipynb](https://colab.research.google.com/github/exhypotheses/credit/blob/develop/notebooks/data.ipynb) →
+
+<br>
+
 ### Development Notes
 
 <br>
@@ -34,7 +40,7 @@ whereby filter.txt does not include `python-graphviz`, `pywin32`, `nodejs`.  And
 ### Encoding
 
   `dictionary = {`
-      
+
         'e_chq_acc_status': {'A11': 0, 'A12': 1, 'A13': 2, 'A14': 3},    
         'credit_history': {'A30': 0, 'A31': 1, 'A32': 2, 'A33': 3, 'A34': 4},
         'purpose': {'A40': 0, 'A41': 1, 'A42': 2, 'A43': 3, 'A44': 4, 'A45': 5, 'A46': 6, 'A47': 7,
@@ -49,12 +55,5 @@ whereby filter.txt does not include `python-graphviz`, `pywin32`, `nodejs`.  And
         'job': {'A171': 0, 'A172': 1, 'A173': 2, 'A174': 3},    
         'telephone': {'A191': 0, 'A192': 1},    
         'foreign_worker': {'A201': 1, 'A202': 0}
-  
+
   `}`
-
-
-
-
-
-
-

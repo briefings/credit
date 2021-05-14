@@ -15,7 +15,7 @@ class Modelling:
     def attributes():
 
         InstancesAttributes = collections.namedtuple(
-            typename='InstancesAttributes', field_names=['url', 'dtype', 'labels', 'strata'])
+            typename='InstancesAttributes', field_names=['url', 'dtype', 'labels'])
 
         url = 'https://raw.githubusercontent.com/briefings/credit/develop/warehouse/data/modelling.csv'
 
@@ -36,9 +36,7 @@ class Modelling:
 
         labels = 'reasonable'
 
-        strata = ['reasonable', 'sex']
-
-        return InstancesAttributes._make((url, dtype, labels, strata))
+        return InstancesAttributes._make((url, dtype, labels))
 
     def data(self):
 
