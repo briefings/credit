@@ -55,7 +55,7 @@ class Scalers:
         numerical, _ = self.fields(blob=blob.copy())
 
         # Scaling the numeric fields only
-        scaler = sklearn.preprocessing.StandardScaler(with_mean=False)
+        scaler = sklearn.preprocessing.StandardScaler(with_mean=True)
         scaler.fit(X=blob[numerical].values)
 
         return scaler
