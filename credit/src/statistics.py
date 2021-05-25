@@ -15,7 +15,7 @@ class Statistics:
         InstancesAttributes = collections.namedtuple(
             typename='InstancesAttributes', field_names=['url', 'dtype', 'labels'])
 
-        url = 'https://raw.githubusercontent.com/briefings/credit/develop/warehouse/data/graphing.csv'
+        url = 'https://raw.githubusercontent.com/briefings/credit/develop/warehouse/data/numeric.csv'
 
         dtype = {'duration_months': np.int64, 'credit_amount': np.int64, 'i_rate_by_disp_inc': np.int64,
                  'curr_res_since': np.int64, 'age_years': np.int64, 'n_e_credits_this_bank': np.int64,
