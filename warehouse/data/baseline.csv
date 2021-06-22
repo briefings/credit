@@ -1,4 +1,4 @@
-duration_months,credit_amount,i_rate_by_disp_inc,curr_res_since,age_years,n_e_credits_this_bank,n_dependants,e_chq_acc_status,credit_history,purpose,savings_acc_class,curr_emp_class,sex_and_status,other_debtors_class,property,other_i_plans,housing,job,telephone,foreign_worker,sex,reasonable
+duration_months,credit_amount,i_rate_by_disp_inc,curr_res_since,age_years,n_e_credits_this_bank,n_dependants,e_chq_acc_status,credit_history,purpose,savings_acc_class,curr_emp_class,sex_and_status,other_debtors_class,property,other_i_plans,housing,job,telephone,foreign_worker,female,reasonable
 6,1169,4,4,67,2,1,A11,A34,A43,A65,A75,A93,A101,A121,A143,A152,A173,A192,A201,0,1
 48,5951,2,2,22,1,1,A12,A32,A43,A61,A73,A92,A101,A121,A143,A152,A173,A191,A201,1,0
 12,2096,2,3,49,1,2,A14,A34,A46,A61,A74,A93,A101,A121,A143,A152,A172,A191,A201,0,1
