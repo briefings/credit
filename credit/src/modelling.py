@@ -30,9 +30,9 @@ class Modelling:
                  'A101': np.uint8, 'A102': np.uint8, 'A103': np.uint8, 'A121': np.uint8, 'A122': np.uint8,
                  'A123': np.uint8, 'A124': np.uint8, 'A141': np.uint8, 'A142': np.uint8, 'A143': np.uint8,
                  'A151': np.uint8, 'A152': np.uint8, 'A153': np.uint8, 'A171': np.uint8, 'A172': np.uint8,
-                 'A173': np.uint8, 'A174': np.uint8, 'A191': np.uint8, 'A192': np.uint8, 'A202': np.uint8,
-                 'A201': np.uint8, 'A91': np.uint8, 'A92': np.uint8, 'A93': np.uint8, 'A94': np.uint8,
-                 'sex': np.int64, 'healthy': np.int64}
+                 'A173': np.uint8, 'A174': np.uint8,
+                 'A91': np.uint8, 'A92': np.uint8, 'A93': np.uint8, 'A94': np.uint8,
+                 'A192': np.uint8, 'A201': np.uint8, 'female': np.int64, 'reasonable': np.int64}
 
         labels = 'reasonable'
 

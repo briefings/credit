@@ -23,7 +23,7 @@ class Statistics:
                  'purpose': np.int64, 'savings_acc_class': np.int64, 'curr_emp_class': np.int64,
                  'sex_and_status': np.int64, 'other_debtors_class': np.int64, 'property': np.int64,
                  'other_i_plans': np.int64, 'housing': np.int64, 'job': np.int64, 'telephone': np.int64,
-                 'foreign_worker': np.int64, 'sex': np.int64, 'reasonable': np.int64}
+                 'foreign_worker': np.int64, 'female': np.int64, 'reasonable': np.int64}
 
         labels = 'reasonable'
 
