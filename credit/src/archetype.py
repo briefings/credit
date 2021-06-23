@@ -48,7 +48,7 @@ class Archetype:
                   np.array(['A91', 'A92', 'A93', 'A94', 'A95']), np.array(['A101', 'A102', 'A103']),
                   np.array(['A121', 'A122', 'A123', 'A124']), np.array(['A141', 'A142', 'A143']),
                   np.array(['A151', 'A152', 'A153']), np.array(['A171', 'A172', 'A173', 'A174']),
-                  np.array(['A191', 'A192']), np.array(['A201', 'A202'])]
+                  np.array(['A191', 'A192']), np.array(['A202', 'A201'])]
 
         dictionary = {}
 
