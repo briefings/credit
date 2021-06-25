@@ -93,7 +93,7 @@ class Representations:
             frame = self.__remap(excerpt=excerpt, reference=reference, key=key)
 
             # Hence
-            computations.append([frame, reference])
+            computations.append((frame, reference))
 
         dask.visualize(computations, filename='computations', format='pdf')
         representations = dask.compute(computations, scheduler='processes')
