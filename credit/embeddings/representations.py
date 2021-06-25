@@ -54,7 +54,7 @@ class Representations:
         :param values:
         :return:
         """
-        
+
         return self.reference.exc(features=values, patterns=transformations)
 
     @dask.delayed
