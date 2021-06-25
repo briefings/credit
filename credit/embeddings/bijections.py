@@ -3,6 +3,9 @@ import numpy as np
 
 
 class Bijections:
+    """
+    Remaps features & embeddings w.r.t. bijective set-up
+    """
 
     def __init__(self, reference: dict, key: str):
         """
