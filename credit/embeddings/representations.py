@@ -96,6 +96,6 @@ class Representations:
             computations.append((frame, reference))
 
         dask.visualize(computations, filename='computations', format='pdf')
-        representations = dask.compute(computations, scheduler='processes')
+        representations = dask.compute(computations, scheduler='processes')[0]
 
         return representations
