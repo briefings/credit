@@ -3,6 +3,9 @@ import numpy as np
 
 
 class Reference:
+    """
+    Determine the bijective features/embeddings reference of a category
+    """
 
     def __init__(self):
         """
