@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-import credit.graphing.relational
+import risk.graphing.relational
 
 
 class Odds:
@@ -13,7 +13,7 @@ class Odds:
         Constructor
         """
 
-        self.relational = credit.graphing.relational.Relational()
+        self.relational = risk.graphing.relational.Relational()
 
     def exc(self, odds: pd.DataFrame, estimates: np.ndarray, name: str):
         """
