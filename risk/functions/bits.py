@@ -1,6 +1,6 @@
 import pandas as pd
 
-import credit.src.archetype
+import risk.src.archetype
 
 
 class Bits:
@@ -20,7 +20,7 @@ class Bits:
             }
         """
 
-        archetype = credit.src.archetype.Archetype()
+        archetype = risk.src.archetype.Archetype()
         self.categories = archetype.categories()
 
     @staticmethod
