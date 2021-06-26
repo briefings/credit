@@ -22,11 +22,11 @@ pip install dask[complete]==2.30.0 &> logs/dask.log
 
 
 # https://linux.die.net/man/1/wget
-wget -q https://github.com/briefings/credit/raw/develop/credit.zip
-wget -q https://raw.githubusercontent.com/briefings/credit/develop/config.py
+wget -q https://github.com/briefings/risk/raw/develop/risk.zip
+wget -q https://raw.githubusercontent.com/briefings/risk/develop/config.py
 
 
 # https://linux.die.net/man/1/unzip
-rm -rf credit
-unzip -u -q credit.zip
-rm -rf credit.zip
+rm -rf risk
+unzip -u -q risk.zip
+rm -rf risk.zip
