@@ -3,7 +3,7 @@ import numpy as np
 import sklearn.decomposition
 
 
-class Projectors:
+class Project:
 
     def __init__(self):
         """
