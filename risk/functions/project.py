@@ -1,6 +1,9 @@
 import numpy as np
+import pandas as pd
 
 import sklearn.decomposition
+
+import config
 
 
 class Project:
@@ -10,26 +13,33 @@ class Project:
         Constructor
         """
 
+        configurations = config.Config()
+        self.SEED = configurations.SEED
+
     @staticmethod
-    def apply(matrix: np.ndarray, projector: sklearn.decomposition.KernelPCA):
+    def apply(matrix: np.ndarray, vector: pd.Series, projector: sklearn.decomposition.KernelPCA) -> pd.DataFrame:
         """
 
-        :param matrix:
-        :param projector:
+        :param matrix: The independent variables matrix
+        :param vector:  The dependent variable vector
+        :param projector: A transformer
         :return:
         """
 
-        return projector.transform(X=matrix)
+        principals = projector.transform(X=matrix)
+        names = ['kpc_' + str(i).zfill(2) for i in range(1, 1 + principals.shape[1])]
 
-    @staticmethod
-    def determine(matrix: np.ndarray) -> sklearn.decomposition.KernelPCA:
+        return pd.concat((pd.DataFrame(data=principals, columns=names), vector), axis=1)
+
+    def exc(self, matrix: np.ndarray,  n_components: int = None) -> sklearn.decomposition.KernelPCA:
         """
 
-        :param matrix:
+        :param matrix: The matrix that will be decomposed
+        :param n_components: The number of components required
         :return:
         """
 
-        projector = sklearn.decomposition.KernelPCA(kernel='cosine', random_state=5)
+        projector = sklearn.decomposition.KernelPCA(kernel='cosine', random_state=self.SEED,  n_components=n_components)
         projector.fit(X=matrix)
 
         return projector
