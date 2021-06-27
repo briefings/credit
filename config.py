@@ -15,3 +15,5 @@ class Config:
                         'n_e_credits_this_bank', 'n_dependants']
 
         self.warehouse = os.path.join(os.getcwd(), 'warehouse')
+
+        self.SEED = 5
