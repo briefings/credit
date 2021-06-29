@@ -17,6 +17,7 @@ pip install yellowbrick==1.3.post1 &> logs/yellow.log
 pip install pymc3==3.11.2 &> logs/pymc3.log
 pip install cloudpickle==1.6.0 &> logs/cloudpickle.log
 pip install dask[complete]==2.30.0 &> logs/dask.log
+pip install scikit-learn==0.24.2 &> logs/sklearn.log
 
 # https://linux.die.net/man/1/wget
 wget -q https://github.com/exhypotheses/risk/raw/develop/risk.zip
