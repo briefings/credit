@@ -19,8 +19,8 @@ pip install cloudpickle==1.6.0 &> logs/cloudpickle.log
 pip install dask[complete]==2.30.0 &> logs/dask.log
 
 # https://linux.die.net/man/1/wget
-wget -q https://github.com/briefings/risk/raw/develop/risk.zip
-wget -q https://raw.githubusercontent.com/briefings/risk/develop/config.py
+wget -q https://github.com/exhypotheses/risk/raw/develop/risk.zip
+wget -q https://raw.githubusercontent.com/exhypotheses/risk/develop/config.py
 
 # https://linux.die.net/man/1/unzip
 rm -rf risk
