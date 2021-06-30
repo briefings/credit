@@ -14,17 +14,17 @@ class Sample:
         configurations = config.Config()
         self.SEED = configurations.SEED
 
-    def exc(self, blob: pd.DataFrame, pivot: list):
+    def exc(self, blob: pd.DataFrame, target: str):
         """
 
         :param blob: The data set that will be sampled
-        :param pivot: The list of fields about which sampling should occur
+        :param target: The labels field
         :return:
         """
 
         # Over-sampling via SVNSMOTE
         # https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SVMSMOTE.html
         svnsmote = imblearn.over_sampling.SVMSMOTE(random_state=self.SEED, sampling_strategy='all', k_neighbors=9)
-        x_training_resampled, y_pivot_resampled = svnsmote.fit_resample(X=blob.drop(columns=pivot), y=blob[pivot])
+        x_training_resampled, y_training_resampled = svnsmote.fit_resample(X=blob.drop(columns=target), y=blob[target])
 
-        return pd.concat((x_training_resampled, y_pivot_resampled), axis=1, ignore_index=False)
+        return pd.concat((x_training_resampled, y_training_resampled), axis=1, ignore_index=False)
