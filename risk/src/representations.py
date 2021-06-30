@@ -10,11 +10,13 @@ class Representations:
         Constructor
         """
 
+        self.binary_fields = ['A192', 'A201', 'female']
+
     @staticmethod
     def attributes():
 
         InstancesAttributes = collections.namedtuple(
-            typename='InstancesAttributes', field_names=['url', 'dtype', 'labels'])
+            typename='InstancesAttributes', field_names=['url', 'dtype', 'target'])
 
         url = 'https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/representations/data.csv'
 
@@ -34,9 +36,9 @@ class Representations:
                  'job_1': np.float64, 'job_2': np.float64,
                  'A192': np.uint8, 'A201': np.uint8, 'female': np.uint8, 'reasonable': np.uint8}
 
-        labels = 'reasonable'
+        target = 'reasonable'
 
-        return InstancesAttributes._make((url, dtype, labels))
+        return InstancesAttributes._make((url, dtype, target))
 
     def data(self):
 
