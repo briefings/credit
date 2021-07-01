@@ -1,5 +1,5 @@
 # Exclude
-*kappa.json
+*kappa.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
