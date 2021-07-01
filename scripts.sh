@@ -8,7 +8,7 @@
 # apt-get install dvipng &>> tex.log
 
 # Setting-up
-rm -rf log
+rm -rf logs
 rm -rf config.py
 mkdir logs
 
