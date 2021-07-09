@@ -10,7 +10,7 @@ class Representations:
         Constructor
         """
 
-        self.binary_fields = ['A192', 'A201', 'female']
+        self.binary_cf = ['A192', 'A201', 'female']
 
     @staticmethod
     def attributes():
