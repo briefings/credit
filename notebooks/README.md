@@ -2,8 +2,9 @@
 
 Thus far:
 
-* [data.ipynb](https://colab.research.google.com/github/exhypotheses/credit/blob/develop/notebooks/data.ipynb)
-* [embeddings.ipynb](https://colab.research.google.com/github/exhypotheses/credit/blob/develop/notebooks/embeddings.ipynb)
+* [data.ipynb](https://colab.research.google.com/github/exhypotheses/risk/blob/develop/notebooks/data.ipynb)
+* [embedding.ipynb](https://colab.research.google.com/github/exhypotheses/risk/blob/develop/notebooks/embedding.ipynb)
+* [splitting.ipynb](https://colab.research.google.com/github/exhypotheses/risk/blob/develop/notebooks/splitting.ipynb)
 
 <br>
 <br>
