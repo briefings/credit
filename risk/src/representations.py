@@ -34,7 +34,9 @@ class Representations:
                  'other_i_plans_1': np.float64, 'other_i_plans_2': np.float64,
                  'housing_1': np.float64, 'housing_2': np.float64,
                  'job_1': np.float64, 'job_2': np.float64,
-                 'A192': np.uint8, 'A201': np.uint8, 'female': np.uint8, 'reasonable': np.uint8}
+                 'A192': np.uint8, 'A201': np.uint8, 'female': np.uint8, 'reasonable': np.uint8, 'e_chq_acc_status': str, 'credit_history': str, 'purpose': str,
+                 'savings_acc_class': str, 'curr_emp_class': str, 'sex_and_status': str, 'other_debtors_class': str,
+                 'property': str, 'other_i_plans': str, 'housing': str, 'job': str}
 
         target = 'reasonable'
 
