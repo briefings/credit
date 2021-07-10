@@ -5,8 +5,6 @@ import os
 import graphviz
 import pymc3
 
-import config
-
 
 class DAG:
     """
@@ -19,13 +17,12 @@ class DAG:
 
         """
 
-        configurations = config.Config()
-        self.warehouse = configurations.warehouse
-
-    def exc(self, model: pymc3.Model):
+    @staticmethod
+    def exc(model: pymc3.Model, directory: str):
         """
 
         :param model:
+        :param directory:
         :return:
         """
 
@@ -35,7 +32,7 @@ class DAG:
         diagram.graph_attr.update(size="11.3,11.9")
 
         # Diagrams
-        diagram.save(os.path.join(self.warehouse, 'model.gv'))
-        graphviz.render(engine='dot', format='pdf', filepath=os.path.join(self.warehouse, 'model.gv'))
+        diagram.save(os.path.join(directory, 'model.gv'))
+        graphviz.render(engine='dot', format='pdf', filepath=os.path.join(directory, 'model.gv'))
 
-        return graphviz.Source.from_file(filename=os.path.join(self.warehouse, 'model.gv'))
+        return graphviz.Source.from_file(filename=os.path.join(directory, 'model.gv'))
