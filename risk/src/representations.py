@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import collections
+import requests
 
 
 class Representations:
@@ -10,7 +11,18 @@ class Representations:
         Constructor
         """
 
-        self.binary_fields = ['A192', 'A201', 'female']
+        self.binary_cf = ['A192', 'A201', 'female']
+
+    @staticmethod
+    def mappings() -> bytes:
+
+        try:
+            req = requests.get(url='https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/representations/mappings.json')
+            req.raise_for_status()
+        except requests.exceptions.RequestException as err:
+            raise Exception(err)
+
+        return req.content
 
     @staticmethod
     def attributes():
@@ -34,7 +46,9 @@ class Representations:
                  'other_i_plans_1': np.float64, 'other_i_plans_2': np.float64,
                  'housing_1': np.float64, 'housing_2': np.float64,
                  'job_1': np.float64, 'job_2': np.float64,
-                 'A192': np.uint8, 'A201': np.uint8, 'female': np.uint8, 'reasonable': np.uint8}
+                 'A192': np.uint8, 'A201': np.uint8, 'female': np.uint8, 'reasonable': np.uint8, 'e_chq_acc_status': str, 'credit_history': str, 'purpose': str,
+                 'savings_acc_class': str, 'curr_emp_class': str, 'sex_and_status': str, 'other_debtors_class': str,
+                 'property': str, 'other_i_plans': str, 'housing': str, 'job': str}
 
         target = 'reasonable'
 
