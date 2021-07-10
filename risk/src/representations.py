@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import collections
+import requests
 
 
 class Representations:
@@ -11,6 +12,17 @@ class Representations:
         """
 
         self.binary_cf = ['A192', 'A201', 'female']
+
+    @staticmethod
+    def mappings() -> bytes:
+
+        try:
+            req = requests.get(url='https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/representations/mappings.json')
+            req.raise_for_status()
+        except requests.exceptions.RequestException as err:
+            raise Exception(err)
+
+        return req.content
 
     @staticmethod
     def attributes():
