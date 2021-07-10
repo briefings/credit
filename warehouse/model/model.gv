@@ -1,70 +1,22 @@
 digraph {
 	graph [size="11.3,11.9"]
 	node [shape=circle]
-	other_i_plans_2 [label="other_i_plans_2
-~
-StudentT"]
-	property_2 [label="property_2
-~
-StudentT"]
-	other_i_plans_1 [label="other_i_plans_1
-~
-StudentT"]
-	duration_months [label="duration_months
+	housing_2 [label="housing_2
 ~
 StudentT"]
 	savings_acc_class_2 [label="savings_acc_class_2
 ~
 StudentT"]
-	other_debtors_class_1 [label="other_debtors_class_1
+	savings_acc_class_1 [label="savings_acc_class_1
 ~
 StudentT"]
-	e_chq_acc_status_1 [label="e_chq_acc_status_1
-~
-StudentT"]
-	n_dependants [label="n_dependants
+	duration_months [label="duration_months
 ~
 StudentT"]
 	n_e_credits_this_bank [label="n_e_credits_this_bank
 ~
 StudentT"]
-	job_2 [label="job_2
-~
-StudentT"]
-	credit_history_1 [label="credit_history_1
-~
-StudentT"]
-	other_debtors_class_2 [label="other_debtors_class_2
-~
-StudentT"]
-	savings_acc_class_1 [label="savings_acc_class_1
-~
-StudentT"]
-	A192 [label="A192
-~
-StudentT"]
-	job_1 [label="job_1
-~
-StudentT"]
-	purpose_1 [label="purpose_1
-~
-StudentT"]
-	A201 [label="A201
-~
-StudentT"]
-	housing_1 [label="housing_1
-~
-StudentT"]
-	curr_emp_class_2 [label="curr_emp_class_2
-~
-StudentT"]
-	housing_2 [label="housing_2
-~
-StudentT"]
-	property_1 [label="property_1
-~
-StudentT"]
-	curr_emp_class_1 [label="curr_emp_class_1
+	property_2 [label="property_2
 ~
 StudentT"]
 	e_chq_acc_status_2 [label="e_chq_acc_status_2
@@ -73,19 +25,67 @@ StudentT"]
 	Intercept [label="Intercept
 ~
 Flat"]
+	purpose_2 [label="purpose_2
+~
+StudentT"]
+	A201 [label="A201
+~
+StudentT"]
 	curr_res_since [label="curr_res_since
+~
+StudentT"]
+	curr_emp_class_1 [label="curr_emp_class_1
 ~
 StudentT"]
 	credit_amount [label="credit_amount
 ~
 StudentT"]
-	purpose_2 [label="purpose_2
+	housing_1 [label="housing_1
+~
+StudentT"]
+	credit_history_1 [label="credit_history_1
+~
+StudentT"]
+	other_i_plans_1 [label="other_i_plans_1
+~
+StudentT"]
+	other_i_plans_2 [label="other_i_plans_2
+~
+StudentT"]
+	curr_emp_class_2 [label="curr_emp_class_2
+~
+StudentT"]
+	credit_history_2 [label="credit_history_2
 ~
 StudentT"]
 	i_rate_by_disp_inc [label="i_rate_by_disp_inc
 ~
 StudentT"]
-	credit_history_2 [label="credit_history_2
+	n_dependants [label="n_dependants
+~
+StudentT"]
+	e_chq_acc_status_1 [label="e_chq_acc_status_1
+~
+StudentT"]
+	job_2 [label="job_2
+~
+StudentT"]
+	A192 [label="A192
+~
+StudentT"]
+	purpose_1 [label="purpose_1
+~
+StudentT"]
+	other_debtors_class_2 [label="other_debtors_class_2
+~
+StudentT"]
+	property_1 [label="property_1
+~
+StudentT"]
+	job_1 [label="job_1
+~
+StudentT"]
+	other_debtors_class_1 [label="other_debtors_class_1
 ~
 StudentT"]
 	subgraph cluster910 {
@@ -94,33 +94,33 @@ StudentT"]
 Binomial" style=filled]
 		label=910 labeljust=r labelloc=b style=rounded
 	}
-	other_i_plans_2 -> y
-	other_i_plans_1 -> y
-	property_2 -> y
-	duration_months -> y
-	savings_acc_class_2 -> y
-	other_debtors_class_1 -> y
-	e_chq_acc_status_1 -> y
-	n_dependants -> y
-	n_e_credits_this_bank -> y
-	job_2 -> y
-	credit_history_1 -> y
-	other_debtors_class_2 -> y
-	savings_acc_class_1 -> y
-	A192 -> y
-	job_1 -> y
-	purpose_1 -> y
-	A201 -> y
-	housing_1 -> y
-	curr_emp_class_2 -> y
 	housing_2 -> y
-	property_1 -> y
+	savings_acc_class_2 -> y
+	savings_acc_class_1 -> y
+	duration_months -> y
+	n_e_credits_this_bank -> y
+	property_2 -> y
 	e_chq_acc_status_2 -> y
-	curr_emp_class_1 -> y
 	Intercept -> y
-	curr_res_since -> y
-	credit_amount -> y
 	purpose_2 -> y
-	i_rate_by_disp_inc -> y
+	A201 -> y
+	curr_res_since -> y
+	curr_emp_class_1 -> y
+	credit_amount -> y
+	housing_1 -> y
+	credit_history_1 -> y
+	other_i_plans_1 -> y
+	other_i_plans_2 -> y
+	curr_emp_class_2 -> y
 	credit_history_2 -> y
+	i_rate_by_disp_inc -> y
+	n_dependants -> y
+	e_chq_acc_status_1 -> y
+	job_2 -> y
+	A192 -> y
+	purpose_1 -> y
+	property_1 -> y
+	other_debtors_class_2 -> y
+	job_1 -> y
+	other_debtors_class_1 -> y
 }
