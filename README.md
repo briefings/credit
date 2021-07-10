@@ -4,15 +4,23 @@ This repository is focused on Professor Dr. Hans Hofmann's [German Credit Data](
 
 <br>
 
-| DAG |
-:-:
-↓
-[data.ipynb](https://colab.research.google.com/github/exhypotheses/credit/blob/develop/notebooks/data.ipynb)
-↓
-[embedding.ipynb](https://colab.research.google.com/github/exhypotheses/risk/blob/develop/notebooks/embedding.ipynb)
-↓
-[splitting.ipynb](https://colab.research.google.com/github/exhypotheses/risk/blob/develop/notebooks/splitting.ipynb)
-↓
+
+
+<table style="text-align:center; border:0px">
+<tr><td><a href="https://colab.research.google.com/github/exhypotheses/credit/blob/develop/notebooks/data.ipynb">data.ipynb</a></td></tr>
+<tr><td>↓</td></tr>
+<tr><td>Embed<br><a href="https://colab.research.google.com/github/exhypotheses/credit/blob/develop/notebooks/embedding.ipynb">embedding.ipynb</a></td></tr>
+<tr><td>↓</td></tr>
+<tr><td>Split<br><a href="https://colab.research.google.com/github/exhypotheses/credit/blob/develop/notebooks/splitting.ipynb">splitting.ipynb</a></td></tr>
+<tr><td>↓</td></tr>
+<tr><td>Model<br>
+  <ul>
+  <li><a href="https://colab.research.google.com/github/exhypotheses/credit/blob/develop/notebooks/logistic.ipynb">logistic.ipynb</a></li>
+  <li></li>
+  </ul>
+</td></tr>
+</table>
+
 
 <br>
 
