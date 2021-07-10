@@ -2,7 +2,7 @@
 
 Thus far:
 
-* <a href="https://colab.research.google.com/github/exhypotheses/risk/blob/develop/notebooks/data.ipynb" target="\_blank">data.ipynb</a>
+* <a href="https://colab.research.google.com/github/exhypotheses/risk/blob/develop/notebooks/data.ipynb" target="_blank">data.ipynb</a>
 * [embedding.ipynb](https://colab.research.google.com/github/exhypotheses/risk/blob/develop/notebooks/embedding.ipynb)
 * [splitting.ipynb](https://colab.research.google.com/github/exhypotheses/risk/blob/develop/notebooks/splitting.ipynb)
 * Modelling
