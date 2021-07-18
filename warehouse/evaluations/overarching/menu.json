@@ -1,0 +1,7 @@
+[
+  {"desc": "metrics",
+    "name": "Error Metrics"},
+  {"desc": "frequencies",
+    "name": "Error Frequencies"
+  }
+]
