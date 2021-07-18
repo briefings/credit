@@ -4,12 +4,15 @@ This repository is focused on Professor Dr. Hans Hofmann's [German Credit Data](
 
 <br>
 
-**DAG:**
+**Temporary Outline of Steps**
+
+Preliminaries:
 * [data.ipynb](https://colab.research.google.com/github/exhypotheses/risk/blob/develop/notebooks/data.ipynb)
 * [embedding.ipynb](https://colab.research.google.com/github/exhypotheses/risk/blob/develop/notebooks/embedding.ipynb)
 * [splitting.ipynb](https://colab.research.google.com/github/exhypotheses/risk/blob/develop/notebooks/splitting.ipynb)
-* Modelling
-  * [logistic.ipynb](https://colab.research.google.com/github/exhypotheses/risk/blob/develop/notebooks/logistic.ipynb)
+
+Models:
+* Bayesian Logistic Regression<br>[modelling](https://colab.research.google.com/github/exhypotheses/risk/blob/develop/notebooks/logistic.ipynb) ⟶ [performance](https://colab.research.google.com/github/exhypotheses/risk/blob/develop/notebooks/performance.ipynb)
 
 <br>
 
