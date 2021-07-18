@@ -1,0 +1,14 @@
+"variable","value"
+"threshold",0.44
+"tp",186
+"fn",59
+"tn",69
+"fp",36
+"precision",0.8378378378
+"sensitivity",0.7591836735
+"specificity",0.6571428571
+"fscore",0.7965738758
+"youden",0.4163265306
+"matthews",0.3961232258
+"balanced_accuracy",0.7081632653
+"standard_accuracy",0.7
