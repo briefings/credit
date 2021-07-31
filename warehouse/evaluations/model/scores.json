@@ -1,0 +1,1 @@
+{"categories": ["Precision", "Sensitivity", "Specificity", "F Score", "Youden's J Statistic", "Balanced Accuracy", "Standard Accuracy"], "series": {"name": "Bayesian Credit Risk Model", "desc": "Model Metrics", "data": [0.8378378378378378, 0.7591836734693878, 0.6571428571428571, 0.7965738758029979, 0.416326530612245, 0.7081632653061225, 0.7]}}
