@@ -22,8 +22,8 @@ Models:
 
 **Environment**
 
-Refer to the [github.com/briefings/energy Development Notes](https://github.com/briefings/energy#development-notes), it outlines the
-creation & usage of the environment `miscellaneous`, which is used by this repository also.
+Refer to the [Development Notes](https://github.com/briefings/energy#development-notes) of repository [energy](github.com/briefings/energy), it outlines the
+creation of the environment `miscellaneous`, which is used by this repository also.
 
 <br>
 
