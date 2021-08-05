@@ -1,49 +1,43 @@
 digraph {
 	graph [size="11.3,11.9"]
 	node [shape=circle]
-	credit_history_2 [label="credit_history_2
-~
-StudentT"]
-	e_chq_acc_status_1 [label="e_chq_acc_status_1
-~
-StudentT"]
-	duration_months [label="duration_months
-~
-StudentT"]
-	purpose_1 [label="purpose_1
-~
-StudentT"]
 	Intercept [label="Intercept
 ~
 Flat"]
-	property_1 [label="property_1
+	credit_amount [label="credit_amount
 ~
 StudentT"]
-	savings_acc_class_2 [label="savings_acc_class_2
+	savings_acc_class_1 [label="savings_acc_class_1
 ~
 StudentT"]
 	credit_history_1 [label="credit_history_1
 ~
 StudentT"]
-	property_2 [label="property_2
-~
-StudentT"]
 	e_chq_acc_status_2 [label="e_chq_acc_status_2
 ~
 StudentT"]
-	housing_1 [label="housing_1
+	duration_months [label="duration_months
 ~
 StudentT"]
 	housing_2 [label="housing_2
 ~
 StudentT"]
-	credit_amount [label="credit_amount
+	e_chq_acc_status_1 [label="e_chq_acc_status_1
 ~
 StudentT"]
 	purpose_2 [label="purpose_2
 ~
 StudentT"]
-	savings_acc_class_1 [label="savings_acc_class_1
+	purpose_1 [label="purpose_1
+~
+StudentT"]
+	savings_acc_class_2 [label="savings_acc_class_2
+~
+StudentT"]
+	housing_1 [label="housing_1
+~
+StudentT"]
+	credit_history_2 [label="credit_history_2
 ~
 StudentT"]
 	subgraph cluster910 {
@@ -52,19 +46,17 @@ StudentT"]
 Binomial" style=filled]
 		label=910 labeljust=r labelloc=b style=rounded
 	}
-	credit_history_2 -> y
-	e_chq_acc_status_1 -> y
-	purpose_1 -> y
-	duration_months -> y
 	Intercept -> y
-	property_1 -> y
-	housing_2 -> y
-	property_2 -> y
+	savings_acc_class_1 -> y
+	credit_amount -> y
 	credit_history_1 -> y
 	e_chq_acc_status_2 -> y
+	duration_months -> y
+	housing_2 -> y
+	e_chq_acc_status_1 -> y
 	savings_acc_class_2 -> y
-	housing_1 -> y
-	credit_amount -> y
+	purpose_1 -> y
 	purpose_2 -> y
-	savings_acc_class_1 -> y
+	housing_1 -> y
+	credit_history_2 -> y
 }
