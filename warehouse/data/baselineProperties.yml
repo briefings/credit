@@ -2,7 +2,7 @@ dataURL: "https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/
 basename: "baseline.csv"
 dataSourcesDictionary: "https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/fields.json"
 definitionsOfCategories: "https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/definitionsOfCategories.json"
-dataField:
+fieldsOfData:
   - "duration_months"
   - "credit_amount"
   - "i_rate_by_disp_inc"
@@ -25,7 +25,7 @@ dataField:
   - "foreign_worker"
   - "female"
   - "reasonable"
-dataFieldType:
+typesOfFields:
   - int64
   - int64
   - int64
