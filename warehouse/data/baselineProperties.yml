@@ -26,13 +26,13 @@ dataField:
   - "female"
   - "reasonable"
 dataFieldType:
-  - int
-  - int
-  - int
-  - int
-  - int
-  - int
-  - int
+  - int64
+  - int64
+  - int64
+  - int64
+  - int64
+  - int64
+  - int64
   - str
   - str
   - str
@@ -46,5 +46,5 @@ dataFieldType:
   - str
   - str
   - str
-  - int
-  - int
+  - int8
+  - int8
