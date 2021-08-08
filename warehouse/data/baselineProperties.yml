@@ -1,4 +1,5 @@
 dataURL: "https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/baseline.csv"
+dataSourceName: "baseline.csv"
 inDataURL: "https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/fields.json"
 definitionsOfCategories: "https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/definitionsOfCategories.json"
 dataField:
