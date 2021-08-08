@@ -1,0 +1,49 @@
+dataURL: "https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/baseline.csv"
+inDataURL: "https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/fields.json"
+definitionsOfCategories: "https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/definitionsOfCategories.json"
+dataField:
+  - "duration_months"
+  - "credit_amount"
+  - "i_rate_by_disp_inc"
+  - "curr_res_since"
+  - "age_years"
+  - "n_e_credits_this_bank"
+  - "n_dependants"
+  - "e_chq_acc_status"
+  - "credit_history"
+  - "purpose"
+  - "savings_acc_class"
+  - "curr_emp_class"
+  - "sex_and_status"
+  - "other_debtors_class"
+  - "property"
+  - "other_i_plans"
+  - "housing"
+  - "job"
+  - "telephone"
+  - "foreign_worker"
+  - "female"
+  - "reasonable"
+dataFieldType:
+  - int
+  - int
+  - int
+  - int
+  - int
+  - int
+  - int
+  - str
+  - str
+  - str
+  - str
+  - str
+  - str
+  - str
+  - str
+  - str
+  - str
+  - str
+  - str
+  - str
+  - int
+  - int
