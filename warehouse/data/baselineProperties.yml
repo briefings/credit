@@ -1,6 +1,6 @@
 dataURL: "https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/baseline.csv"
 basename: "baseline.csv"
-dataSourcesDictionary: "https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/fields.json"
+sources: "https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/sources.json"
 definitionsOfCategories: "https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/definitionsOfCategories.json"
 fieldsOfData:
   - "duration_months"
