@@ -1,4 +1,5 @@
 import os
+import yaml
 
 import numpy as np
 import pandas as pd
@@ -25,7 +26,7 @@ class Modelling:
         self.configurations = config.Config()
         self.path = os.path.join(self.configurations.warehouse, 'data', 'modelling')
 
-    def __bits(self):
+    def __bits(self) -> (pd.DataFrame, list):
         """
 
         :return:
@@ -42,9 +43,12 @@ class Modelling:
         # 'if binary' drops the original names.  This statements reverses the change.
         bits.rename(columns={'A192': 'telephone', 'A201': 'foreign_worker'}, inplace=True)
 
-        return bits
+        # Hence, the list of fields that were reshaped, and thus lost their original names
+        reshaped = list(set(self.properties.tcf['fields']).difference(['telephone', 'foreign_worker']))
 
-    def __write(self, data: pd.DataFrame):
+        return bits, reshaped
+
+    def __write(self, data: pd.DataFrame) -> bool:
         """
 
         :param data:
@@ -60,9 +64,18 @@ class Modelling:
 
     def exc(self):
 
-        bits = self.__bits()
-        left = self.frame.drop(columns=self.properties.tcf['fields'])
-        data = pd.concat((bits, left), axis=1, ignore_index=False)
+        # One Hot Encodings of self.properties.tcf['fields']
+        bits, reshaped = self.__bits()
 
+        # The columns that did not undergo encoding
+        left = self.frame.drop(columns=self.properties.tcf['fields'])
+
+        # Original columns: polytomous categorical fields only
+        right = self.frame[reshaped]
+
+        # Hence
+        data = pd.concat((bits, left, right), axis=1, ignore_index=False)
+
+        # Finally
         if self.__write(data=data):
             return data
