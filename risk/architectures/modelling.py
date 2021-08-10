@@ -1,7 +1,9 @@
-import config
-import os
 import json
+import os
+
 import yaml
+
+import config
 
 
 class Modelling:
@@ -11,7 +13,7 @@ class Modelling:
         self.configurations = config.Config()
         self.path = os.path.join(self.configurations.warehouse, 'data', 'modelling')
 
-    def __properties(self):
+    def __properties(self) -> dict:
         """
 
         :return:
@@ -39,7 +41,9 @@ class Modelling:
         with open(os.path.join(self.path, 'properties.json'), 'w') as disk:
             json.dump(properties, disk)
 
-    def __arguments(self):
+        return properties
+
+    def __arguments(self) -> dict:
         """
 
         :return:
@@ -65,7 +69,7 @@ class Modelling:
         arguments = {
             'url': "https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/modelling/data.csv",
             'basename': 'data.csv',
-            'properties': 'https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/modelling/properties.json',
+            'properties': "https://raw.githubusercontent.com/exhypotheses/risk/develop/warehouse/data/modelling/properties.json",
             'definitions': 'https://raw.githubusercontent.com/exhypotheses/risk/develop/data/definitions.json',
             'fields': list(items.keys()),
             'types': list(items.values())}
@@ -76,7 +80,11 @@ class Modelling:
         except yaml.YAMLError as err:
             raise Exception(err)
 
+        return arguments
+
     def exc(self):
 
-        self.__properties()
-        self.__arguments()
+        properties = self.__properties()
+        arguments = self.__arguments()
+
+        return properties, arguments
