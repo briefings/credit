@@ -1,12 +1,12 @@
-import os
 import json
+import logging
+import os
 
 import numpy as np
 import pandas as pd
 
-import risk.embeddings.representations
-
 import config
+import risk.embeddings.representations
 
 
 class Interface:
@@ -21,8 +21,13 @@ class Interface:
         self.training = training
         self.properties = properties
 
+        # Config
         self.configurations = config.Config()
         self.path = os.path.join(self.configurations.warehouse, 'representations')
+
+        # Logging
+        logging.basicConfig(level=logging.INFO, format='%(message)s\n%(asctime)s.%(msecs)03d', datefmt='%Y-%m-%d %H:%M:%S')
+        self.logger = logging.getLogger(__name__)
 
     def __restructure(self, embedded, mappings) -> pd.DataFrame:
         
@@ -72,4 +77,4 @@ class Interface:
             with open(os.path.join(self.path, 'mappings.json'), 'w') as disk:
                 json.dump(mappings, disk)
 
-            return data
+            self.logger.info(data.info())
