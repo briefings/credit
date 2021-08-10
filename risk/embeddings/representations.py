@@ -21,7 +21,8 @@ class Representations:
         self.reference = risk.embeddings.reference.Reference()
         self.t_sne = sklearn.manifold.TSNE(
             n_components=2, perplexity=50.0, early_exaggeration=12.0, learning_rate=200.0,
-            n_iter=1000, n_iter_without_progress=500, metric='cosine', init='pca', random_state=5, method='exact')
+            n_iter=1000, n_iter_without_progress=500, metric='cosine', init='pca', random_state=5,
+            method='exact', square_distances=True)
 
     @dask.delayed
     def __excerpt(self, values: list) -> pd.DataFrame:
