@@ -4,7 +4,7 @@ import logging
 import config
 import risk.architectures.baseline
 import risk.architectures.modelling
-import risk.embeddings.interface
+import risk.embedding.interface
 import risk.functions.split
 import risk.io.archetype
 import risk.io.baseline
@@ -39,7 +39,8 @@ class Initial:
 
         return data
 
-    def __baseline(self, data):
+    @staticmethod
+    def __baseline(data):
 
         # Address inconsistencies
         baseline = risk.io.baseline.Baseline(frame=data).exc()
@@ -47,7 +48,8 @@ class Initial:
 
         return baseline
 
-    def __modelling(self, baseline):
+    @staticmethod
+    def __modelling(baseline):
 
         # Prepare for modelling: Textual Categorical Fields > One Hot Encodings OR Binary
         modelling = risk.io.modelling.Modelling(frame=baseline).exc()

@@ -2,8 +2,8 @@ import dask
 import pandas as pd
 import sklearn.manifold
 
-import risk.embeddings.bijections
-import risk.embeddings.reference
+import risk.embedding.bijections
+import risk.embedding.reference
 
 
 class Representations:
@@ -18,7 +18,7 @@ class Representations:
         self.blob = blob
 
         # Instances
-        self.reference = risk.embeddings.reference.Reference()
+        self.reference = risk.embedding.reference.Reference()
         self.t_sne = sklearn.manifold.TSNE(
             n_components=2, perplexity=50.0, early_exaggeration=12.0, learning_rate=200.0,
             n_iter=1000, n_iter_without_progress=500, metric='cosine', init='pca', random_state=5,
@@ -68,7 +68,7 @@ class Representations:
         :return:
         """
 
-        return risk.embeddings.bijections.Bijections(
+        return risk.embedding.bijections.Bijections(
             reference=reference, key=key).exc(blob=excerpt)
 
     def exc(self, groups: dict):

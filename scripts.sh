@@ -2,15 +2,18 @@
 
 # A script file for Google Colaboratory
 
+
 # TeX
 # apt-get install texlive-latex-extra  &> tex.log
 # apt-get install ghostscript &>> tex.log
 # apt-get install dvipng &>> tex.log
 
+
 # Setting-up
 rm -rf logs
 rm -rf config.py
 mkdir logs
+
 
 # Packages
 pip install yellowbrick==1.3.post1 &> logs/yellow.log
@@ -20,9 +23,11 @@ pip install dask[complete]==2.30.0 &> logs/dask.log
 pip install scikit-learn==0.24.2 &> logs/learn.log
 pip install imbalanced-learn==0.8.0 >> logs/learn.log
 
+
 # https://linux.die.net/man/1/wget
 wget -q https://github.com/exhypotheses/risk/raw/develop/risk.zip
 wget -q https://raw.githubusercontent.com/exhypotheses/risk/develop/config.py
+
 
 # https://linux.die.net/man/1/unzip
 rm -rf risk
