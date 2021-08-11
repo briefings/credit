@@ -20,7 +20,7 @@ class Split:
         self.arguments = arguments
 
         self.configurations = config.Config()
-        self.path = os.path.join(self.configurations.warehouse, 'splits', 'scikit')
+        self.path = os.path.join(self.configurations.warehouse, 'data', 'modelling', 'splits', 'scikit')
 
     def __write(self, training: pd.DataFrame, testing: pd.DataFrame):
         """
