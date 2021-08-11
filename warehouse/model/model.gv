@@ -4,28 +4,16 @@ digraph {
 	Intercept [label="Intercept
 ~
 Flat"]
-	credit_amount [label="credit_amount
+	credit_history_2 [label="credit_history_2
+~
+StudentT"]
+	purpose_2 [label="purpose_2
 ~
 StudentT"]
 	savings_acc_class_1 [label="savings_acc_class_1
 ~
 StudentT"]
 	credit_history_1 [label="credit_history_1
-~
-StudentT"]
-	e_chq_acc_status_2 [label="e_chq_acc_status_2
-~
-StudentT"]
-	duration_months [label="duration_months
-~
-StudentT"]
-	housing_2 [label="housing_2
-~
-StudentT"]
-	e_chq_acc_status_1 [label="e_chq_acc_status_1
-~
-StudentT"]
-	purpose_2 [label="purpose_2
 ~
 StudentT"]
 	purpose_1 [label="purpose_1
@@ -37,7 +25,19 @@ StudentT"]
 	housing_1 [label="housing_1
 ~
 StudentT"]
-	credit_history_2 [label="credit_history_2
+	housing_2 [label="housing_2
+~
+StudentT"]
+	e_chq_acc_status_1 [label="e_chq_acc_status_1
+~
+StudentT"]
+	credit_amount [label="credit_amount
+~
+StudentT"]
+	e_chq_acc_status_2 [label="e_chq_acc_status_2
+~
+StudentT"]
+	duration_months [label="duration_months
 ~
 StudentT"]
 	subgraph cluster910 {
@@ -47,16 +47,16 @@ Binomial" style=filled]
 		label=910 labeljust=r labelloc=b style=rounded
 	}
 	Intercept -> y
+	credit_history_2 -> y
+	purpose_2 -> y
 	savings_acc_class_1 -> y
-	credit_amount -> y
 	credit_history_1 -> y
-	e_chq_acc_status_2 -> y
-	duration_months -> y
-	housing_2 -> y
-	e_chq_acc_status_1 -> y
 	savings_acc_class_2 -> y
 	purpose_1 -> y
-	purpose_2 -> y
+	housing_2 -> y
 	housing_1 -> y
-	credit_history_2 -> y
+	e_chq_acc_status_1 -> y
+	credit_amount -> y
+	e_chq_acc_status_2 -> y
+	duration_months -> y
 }
