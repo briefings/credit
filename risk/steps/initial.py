@@ -48,7 +48,7 @@ class Initial:
 
         # Prepare for modelling: Textual Categorical Fields > One Hot Encodings OR Binary
         modelling = risk.io.modelling.Modelling(frame=baseline).exc()
-        properties, _ = risk.architectures.modelling.Modelling().exc()
+        risk.architectures.modelling.Modelling().exc()
         self.logger.info(modelling.info())
 
         # Split into training/testing sets
@@ -57,9 +57,4 @@ class Initial:
         arguments = SplittingArguments._make(
             (0.65, self.configurations.SEED, self.configurations.target, ['female', self.configurations.target]))
 
-        training = risk.functions.split.Split(arguments=arguments).exc(data=modelling)
-        self.logger.info(training.info())
-
-        # Apply T-SNE Embedding to polytomous categorical fields
-        risk.embeddings.interface.Interface(
-            training=training, properties=properties).exc()
+        risk.functions.split.Split(arguments=arguments).exc(data=modelling)
