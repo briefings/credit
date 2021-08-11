@@ -22,10 +22,10 @@ fields:
     - "housing_2"
     - "job_1"
     - "job_2"
-    - "A192"
-    - "A201"
+    - "telephone"
+    - "foreign_worker"
     - "female"
-    - "reasonable"
+    - "acceptable"
 fieldTypes:
     - "numeric"
     - "numeric"
@@ -55,8 +55,8 @@ fieldTypes:
     - "factor"
 pivot:
     - "female"
-    - "reasonable"
+    - "acceptable"
 targets:
-    - "reasonable"
+    - "acceptable"
 training_fraction: 0.6
 initial_fraction: 0.85

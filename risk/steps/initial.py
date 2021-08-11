@@ -8,7 +8,7 @@ import risk.embeddings.interface
 import risk.functions.split
 import risk.io.archetype
 import risk.io.baseline
-import risk.io.definitions
+
 import risk.io.modelling
 
 
@@ -23,33 +23,39 @@ class Initial:
         # URL of original data set
         self.url = url
 
+        # Config
+        self.configurations = config.Config()
+
         # Logging
         logging.basicConfig(level=logging.INFO, format='%(message)s\n%(asctime)s.%(msecs)03d',
                             datefmt='%Y-%m-%d %H:%M:%S')
         self.logger = logging.getLogger(__name__)
 
-        # Instantiating
-        risk.io.definitions.Definitions().exc()
-
-        # Config
-        self.configurations = config.Config()
-
-    def exc(self):
+    def __archetype(self):
 
         # The original data
         data = risk.io.archetype.Archetype(). \
             exc(url=self.url, filename='risk.csv')
-        self.logger.info(data.info())
+
+        return data
+
+    def __baseline(self, data):
 
         # Address inconsistencies
         baseline = risk.io.baseline.Baseline(frame=data).exc()
         risk.architectures.baseline.Baseline().exc()
-        self.logger.info(baseline.info())
+
+        return baseline
+
+    def __modelling(self, baseline):
 
         # Prepare for modelling: Textual Categorical Fields > One Hot Encodings OR Binary
         modelling = risk.io.modelling.Modelling(frame=baseline).exc()
-        properties, _ = risk.architectures.modelling.Modelling().exc()
-        self.logger.info(modelling.info())
+        risk.architectures.modelling.Modelling().exc()
+
+        return modelling
+
+    def __split(self, modelling):
 
         # Split into training/testing sets
         SplittingArguments = collections.namedtuple(
@@ -57,9 +63,20 @@ class Initial:
         arguments = SplittingArguments._make(
             (0.65, self.configurations.SEED, self.configurations.target, ['female', self.configurations.target]))
 
-        training = risk.functions.split.Split(arguments=arguments).exc(data=modelling)
-        self.logger.info(training.info())
+        training, _ = risk.functions.split.Split(arguments=arguments).exc(data=modelling)
 
-        # Apply T-SNE Embedding to polytomous categorical fields
-        risk.embeddings.interface.Interface(
-            training=training, properties=properties).exc()
+        return training
+
+    def exc(self):
+
+        data = self.__archetype()
+        self.logger.info(data.info())
+
+        baseline = self.__baseline(data=data)
+        self.logger.info(baseline.info())
+
+        modelling = self.__modelling(baseline=baseline)
+        self.logger.info(modelling.info())
+
+        training = self.__split(modelling=modelling)
+        self.logger.info(training.info())

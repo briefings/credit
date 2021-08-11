@@ -23,7 +23,7 @@ class Interface:
 
         # Config
         self.configurations = config.Config()
-        self.path = os.path.join(self.configurations.warehouse, 'representations')
+        self.path = os.path.join(self.configurations.warehouse, 'data', 'modelling', 'representations')
 
         # Logging
         logging.basicConfig(level=logging.INFO, format='%(message)s\n%(asctime)s.%(msecs)03d', datefmt='%Y-%m-%d %H:%M:%S')

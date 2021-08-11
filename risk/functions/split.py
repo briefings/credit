@@ -20,7 +20,7 @@ class Split:
         self.arguments = arguments
 
         self.configurations = config.Config()
-        self.path = os.path.join(self.configurations.warehouse, 'splits', 'scikit')
+        self.path = os.path.join(self.configurations.warehouse, 'data', 'modelling', 'splits', 'scikit')
 
     def __write(self, training: pd.DataFrame, testing: pd.DataFrame):
         """
@@ -35,7 +35,7 @@ class Split:
         testing.to_csv(path_or_buf=os.path.join(self.path, 'testing.csv'),
                        header=True, index=False, encoding='UTF-8')
 
-    def exc(self, data: pd.DataFrame) -> pd.DataFrame:
+    def exc(self, data: pd.DataFrame) -> (pd.DataFrame, pd.DataFrame):
         """
 
         :param data:
@@ -56,4 +56,4 @@ class Split:
         
         self.__write(training=training, testing=testing)
 
-        return training
+        return training, testing
