@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 
 import config
-import risk.embeddings.representations
+import risk.embedding.representations
 
 
 class Interface:
@@ -26,7 +26,8 @@ class Interface:
         self.path = os.path.join(self.configurations.warehouse, 'data', 'modelling', 'representations')
 
         # Logging
-        logging.basicConfig(level=logging.INFO, format='%(message)s\n%(asctime)s.%(msecs)03d', datefmt='%Y-%m-%d %H:%M:%S')
+        logging.basicConfig(level=logging.INFO, format='%(message)s\n%(asctime)s.%(msecs)03d',
+                            datefmt='%Y-%m-%d %H:%M:%S')
         self.logger = logging.getLogger(__name__)
 
     def __restructure(self, embedded, mappings) -> pd.DataFrame:
@@ -64,7 +65,7 @@ class Interface:
 
         # Embeddings, and the associated mappings
         groups = self.properties['polytomous']
-        representations = risk.embeddings.representations.Representations(blob=self.training).\
+        representations = risk.embedding.representations.Representations(blob=self.training).\
             exc(groups=groups)
         embedded, mappings = self.__decompose(representations=representations)
 
