@@ -4,7 +4,7 @@ import json
 import pandas as pd
 
 import config
-import risk.embeddings.interface
+import risk.embedding.interface
 
 
 class Embedding:
@@ -44,5 +44,5 @@ class Embedding:
         properties = self.__properties()
 
         # Apply T-SNE Embedding to polytomous categorical fields
-        risk.embeddings.interface.Interface(
+        risk.embedding.interface.Interface(
             training=training, properties=properties).exc()
