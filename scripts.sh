@@ -27,6 +27,8 @@ pip install imbalanced-learn==0.8.0 >> logs/learn.log
 
 
 # https://linux.die.net/man/1/wget
+wgqt -q https://github.com/exhypotheses/risk/raw/develop/risk.zip
+
 wget -q -P warehouse/model https://raw.githubusercontent.com/exhypotheses/risk/master/warehouse/model/model.gv
 wget -q -P warehouse/model https://github.com/exhypotheses/risk/raw/master/warehouse/model/pocket.pkl
 wget -q -P warehouse/model https://github.com/exhypotheses/risk/raw/master/warehouse/model/trace.zip
@@ -36,3 +38,7 @@ wget -q -P warehouse/model https://github.com/exhypotheses/risk/raw/master/wareh
 rm -rf trace
 unzip -u -q -d . warehouse/model/trace.zip
 rm -rf trace.zip
+
+rm -rf risk
+unzip -u -q risk.zip
+rm -rf risk.zip
