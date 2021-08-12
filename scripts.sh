@@ -9,9 +9,11 @@
 # apt-get install dvipng &>> tex.log
 
 
-# Setting-up
+# Directories
+rm -rf warehouse
+mkdir warehouse && mkdir warehouse/model
+
 rm -rf logs
-rm -rf config.py
 mkdir logs
 
 
@@ -26,10 +28,17 @@ pip install imbalanced-learn==0.8.0 >> logs/learn.log
 
 # https://linux.die.net/man/1/wget
 wget -q https://github.com/exhypotheses/risk/raw/develop/risk.zip
-wget -q https://raw.githubusercontent.com/exhypotheses/risk/develop/config.py
+
+wget -q -P warehouse/model https://raw.githubusercontent.com/exhypotheses/risk/master/warehouse/model/model.gv
+wget -q -P warehouse/model https://github.com/exhypotheses/risk/raw/master/warehouse/model/pocket.pkl
+wget -q -P warehouse/model https://github.com/exhypotheses/risk/raw/master/warehouse/model/trace.zip
 
 
 # https://linux.die.net/man/1/unzip
+rm -rf trace
+unzip -u -q -d . warehouse/model/trace.zip
+rm -rf trace.zip
+
 rm -rf risk
 unzip -u -q risk.zip
 rm -rf risk.zip
