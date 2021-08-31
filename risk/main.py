@@ -8,11 +8,11 @@ def main():
     risk.io.definitions.Definitions().exc()
 
     # Initial Steps
-    # url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/german.data'
-    # risk.steps.initial.Initial(url=url).exc()
+    url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/german.data'
+    risk.steps.initial.Initial(url=url).exc()
 
     # Embedding
-    # risk.steps.embedding.Embedding().exc()
+    risk.steps.embedding.Embedding().exc()
 
     # Premodelling
     sampled, scaler = risk.steps.premodelling.Premodelling().exc()
