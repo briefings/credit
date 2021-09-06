@@ -1,5 +1,6 @@
 basename: data.csv
 definitions: https://raw.githubusercontent.com/exhypotheses/risk/develop/data/definitions.json
+descriptions: https://raw.githubusercontent.com/exhypotheses/risk/develop/data/descriptions.csv
 fields:
 - duration_months
 - credit_amount
