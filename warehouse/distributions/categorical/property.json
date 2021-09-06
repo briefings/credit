@@ -1,0 +1,1 @@
+{"categories": ["A121", "A122", "A123", "A124"], "series": [{"name": 0, "data": [60, 71, 102, 67], "stack": 0}, {"name": 1, "data": [222, 161, 230, 87], "stack": 0}], "variable": "property", "variableType": "categorical", "dataType": "string", "unitOfMeasure": "$\\mathcal{1}$", "nullable": "False", "description": "Property"}
