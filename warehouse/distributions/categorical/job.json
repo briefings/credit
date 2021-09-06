@@ -1,0 +1,1 @@
+{"categories": ["A171", "A172", "A173", "A174"], "series": [{"name": 0, "data": [7, 56, 186, 51], "stack": 0}, {"name": 1, "data": [15, 144, 444, 97], "stack": 0}], "variable": "job", "variableType": "categorical", "dataType": "string", "unitOfMeasure": "$\\mathcal{1}$", "nullable": "False", "description": "Job"}
