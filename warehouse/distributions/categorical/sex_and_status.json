@@ -1,0 +1,1 @@
+{"categories": ["A91", "A92", "A93", "A94"], "series": [{"name": 0, "data": [20, 109, 146, 25], "stack": 0}, {"name": 1, "data": [30, 201, 402, 67], "stack": 0}], "variable": "sex_and_status", "variableType": "categorical", "dataType": "string", "unitOfMeasure": "$\\mathcal{1}$", "nullable": "False", "description": "Personal Status & Sex "}
