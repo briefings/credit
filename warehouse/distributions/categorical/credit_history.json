@@ -1,0 +1,1 @@
+{"categories": ["A30", "A31", "A32", "A33", "A34"], "series": [{"name": 0, "data": [25, 28, 169, 28, 50], "stack": 0}, {"name": 1, "data": [15, 21, 361, 60, 243], "stack": 0}], "variable": "credit_history", "variableType": "categorical", "dataType": "string", "unitOfMeasure": "$\\mathcal{1}$", "nullable": "False", "description": "Credit History"}
