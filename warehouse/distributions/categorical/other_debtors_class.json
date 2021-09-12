@@ -1,0 +1,1 @@
+{"categories": ["A101", "A102", "A103"], "series": [{"name": 0, "data": [272, 18, 10], "stack": 0}, {"name": 1, "data": [635, 23, 42], "stack": 0}], "variable": "other_debtors_class", "variableType": "categorical", "dataType": "string", "unitOfMeasure": "$\\mathcal{1}$", "nullable": "False", "description": "Other Debtors/Guarantors "}

@@ -1,0 +1,1 @@
+{"categories": ["A201", "A202"], "series": [{"name": 0, "data": [296, 4], "stack": 0}, {"name": 1, "data": [667, 33], "stack": 0}], "variable": "foreign_worker", "variableType": "categorical", "dataType": "integer", "unitOfMeasure": "$\\mathcal{1}$", "nullable": "False", "description": "Foreign worker"}
