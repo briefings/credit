@@ -14,7 +14,7 @@ def main():
     # Embedding
     risk.steps.embedding.Embedding().exc()
 
-    # Premodelling
+    # Pre-modelling
     sampled, scaler = risk.steps.premodelling.Premodelling().exc()
     logger.info('\n %s', sampled.info())
     logger.info('\n %s', scaler)
